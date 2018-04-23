@@ -1,0 +1,105 @@
+% (c) Gerard Baecker
+\documentclass[fleqn,a4paper,12pt]{article}
+\usepackage[german]{babel}
+%\usepackage{amsmath}    % Mathematische Symbole
+\usepackage{amssymb}     % Nochmehr mathematische Symbole
+\usepackage{dsfont}      % Schriftsatz fuer Zahlenmengensymbole
+%\usepackage{verbatim}   % erweiterte Verbatim-Umgebung
+\usepackage{alltt}       % Quasi-Verbatim-Umgebung
+\usepackage{fancyhdr}    % Eigene Kopfzeilen
+\usepackage{graphicx}    % Zum Einbinden von Grafiken
+% Einbinden einer eps-Grafik geht so: includegraphics{path}
+
+% Seitenraender
+\addtolength{\voffset}{-2cm}
+\addtolength{\textheight}{0cm}
+\addtolength{\hoffset}{0cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\headheight}{2cm} % fuer jeden Strichkode einen Zentimeter
+
+% Skalierung der Grafiken
+\setlength{\unitlength}{1cm}
+
+\pagestyle{fancy}            % Eigene Kopfzeilen verwenden
+\frenchspacing               % Kein Extrafreiraum nach Satzzeichen
+\setlength{\parindent}{0pt}  % Neue Absaetze nicht einruecken
+%\sloppy                     % Schlampige Absatzformatierung
+\fussy                       % Penible Absatzformatierung
+\linespread{1.5}             % Zeilenabstand
+
+% Font fuer Code 39
+\font\xlix=wlc39 scaled 1200
+\newcommand\barcode[1]{{\xlix@#1@}}
+
+% Name, Matrikelnummer, Barcode
+\newcommand\student[2]{
+  \mbox{\scriptsize
+  \begin{tabular}{@{}l@{}r@{}}
+    \multicolumn{2}{@{}r@{}}{\barcode{#2}}\\
+    #1&#2\\
+  \end{tabular}}}
+
+% Kopfzeile
+\lhead{
+  \small
+  \textsc{Grundlagen der Signalverarbeitung \\
+    SS 2018 \\
+    \"Ubung (24.04.2018)}
+  \vfill}
+\rhead{
+  \begin{tabular}[b]{@{}rr@{}}
+    \student{Caroline Kunze}{*552038*} &\\
+     \student{Kevin Noessler}{*569626*}  & \\
+     %\student{Sedat }{*111111*}  &     
+  \end{tabular}}
+
+\begin{document}
+
+"Ubungsaufgabe 1: \newline
+1. Grafische Darstellung:
+\begin{center}
+\begin{figure}[h]
+    \begin{scriptsize}
+  \begin{center}
+      \includegraphics[scale = 0.8]{HA1.png}
+      \end{center}
+ 	\end{scriptsize}
+  \end{figure}
+\end{center}
+  
+\newpage
+
+2. Beurteilung der Audiosignale (4 Sekunden)
+
+\begin{table}[h]
+\begin{tabular}{ll}
+\hline
+Signal                 & Beurteilung                                                                                                                        \\ \hline
+Gleichsignal           & \begin{tabular}[c]{@{}l@{}}Trivialer Fall, da bei der Wiedergabe des \\ Audiosignal kein Ton zu h{\"o}ren ist.\end{tabular}            \\
+&\\
+Sinussignal            & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ einen durchgehender, konstanter Ton erzeugt.\end{tabular} \\
+&\\
+Einfaches Zirpsignal   & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ einen immer h{\"o}her werdender Ton erzeugt.\end{tabular}     \\
+&\\
+Allgemeines Zirpsignal & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ ein fallender Ton erzeugt.\end{tabular}                   \\ \hline
+\end{tabular}
+\end{table}
+
+\newpage
+3. Was passiert, wenn Sie die Signale l{\"a}nger beobachten?
+
+\begin{table}[h]
+\begin{tabular}{ll}
+\hline
+Signal                 & Beurteilung                                                                                                                        \\ \hline
+Gleichsignal           & \begin{tabular}[c]{@{}l@{}}Trivialer Fall, da bei der Wiedergabe des \\ Audiosignal kein Ton zu h{\"o}ren ist.\end{tabular}            \\
+&\\
+Sinussignal            & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ einen durchgehender, konstanter Ton erzeugt, \\ der auch   nach mehr als 4 Sekunden konstant ist.\end{tabular} \\
+&\\
+Einfaches Zirpsignal   & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird einen  \\immer h{\"o}her werdender Ton erzeugt, der jedoch \\ wieder abf{\"a}llt im Laufe der Zeit\end{tabular}     \\
+&\\
+Allgemeines Zirpsignal & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ ein fallender Ton erzeugt, der jedoch wieder ansteigt \\ im Laufe der Zeit\end{tabular}                   \\ \hline
+\end{tabular}
+\end{table}
+
+\end{document}
