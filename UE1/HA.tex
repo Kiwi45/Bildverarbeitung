@@ -42,13 +42,13 @@
 % Kopfzeile
 \lhead{
   \small
-  \textsc{Grundlagen der Signalverarbeitung \\
+  \textsc{Spezialgebiete der Bildverarbeitung \\
     SS 2018 \\
     \"Ubung (24.04.2018)}
   \vfill}
 \rhead{
   \begin{tabular}[b]{@{}rr@{}}
-    \student{Caroline Kunze}{*552038*} &\\
+    \student{Carolin Kunze}{*552038*} &\\
      \student{Kevin Noessler}{*569626*}  & \\
      %\student{Sedat }{*111111*}  &     
   \end{tabular}}
@@ -75,13 +75,13 @@
 \begin{tabular}{ll}
 \hline
 Signal                 & Beurteilung                                                                                                                        \\ \hline
-Gleichsignal           & \begin{tabular}[c]{@{}l@{}}Trivialer Fall, da bei der Wiedergabe des \\ Audiosignal kein Ton zu h{\"o}ren ist.\end{tabular}            \\
+Gleichsignal           & \begin{tabular}[c]{@{}l@{}} Da beim Gleichsignal die konstante Frequenz \\und die Frequenz{\"a}nderung gleich null sind, ist lediglich\\ eine Gerade zu beobachten. Bei der Wiedergabe\\ des Audiosignals ist somit auch kein Ton zu h{\"o}ren.\end{tabular}            \\
 &\\
-Sinussignal            & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ einen durchgehender, konstanter Ton erzeugt.\end{tabular} \\
+Sinussignal            & \begin{tabular}[c]{@{}l@{}} Das Sinussignal besteht aus Sinuskurven und durch die\\ konstante Frequenz von 1 kHz ist bei der Wiedergabe \\ des Audiosignals ein durchgehender, konstanter Ton\\ zu h{\"o}ren, welcher auf der gleichen Tonh{\"o}he bleibt.\end{tabular} \\
 &\\
-Einfaches Zirpsignal   & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ einen immer h{\"o}her werdender Ton erzeugt.\end{tabular}     \\
+Einfaches Zirpsignal   & \begin{tabular}[c]{@{}l@{}} Das Einfache Zirpsignal hat anfangs eine niedrigere\\ Frequenz, welche sich im Verlauf der 4 Sekunden\\ durch eine positive Frequenz{\"a}nderung erh{\"o}ht. In der \\ Wiedergabe des Audiosignals ist \\dies durch einen Anstieg der Tonh{\"o}he zu beobachten. \end{tabular}     \\
 &\\
-Allgemeines Zirpsignal & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ ein fallender Ton erzeugt.\end{tabular}                   \\ \hline
+Allgemeines Zirpsignal & \begin{tabular}[c]{@{}l@{}} Das Allgemeine Zirpsignal hat eine negative\\ Frequenz{\"a}nderung, wodurch sich die Frequenz im \\Verlauf der 4 Sekunden verringert. In der Wiedergabe des\\ Audiosignals wird ein fallender Ton erzeugt.\end{tabular}                   \\ \hline
 \end{tabular}
 \end{table}
 
@@ -92,13 +92,13 @@ Allgemeines Zirpsignal & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audios
 \begin{tabular}{ll}
 \hline
 Signal                 & Beurteilung                                                                                                                        \\ \hline
-Gleichsignal           & \begin{tabular}[c]{@{}l@{}}Trivialer Fall, da bei der Wiedergabe des \\ Audiosignal kein Ton zu h{\"o}ren ist.\end{tabular}            \\
+Gleichsignal           & \begin{tabular}[c]{@{}l@{}}Bei der Wiedergabe des Audiosignals ist auch \\nach 4 Sekunden weiterhin kein Ton zu h{\"o}ren, \\da sich die Frequenz sowie die Frequenz{\"a}nderung\\ nicht {\"a}ndert und diese Werte weiterhin Null sind.\end{tabular}            \\
 &\\
-Sinussignal            & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ einen durchgehender, konstanter Ton erzeugt, \\ der auch   nach mehr als 4 Sekunden konstant ist.\end{tabular} \\
+Sinussignal            & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird weiterhin \\ein durchgehender, konstanter Ton erzeugt, der auch\\ nach mehr als 4 Sekunden seine Tonh{\"o}he nicht {\"a}ndert.\end{tabular} \\
 &\\
-Einfaches Zirpsignal   & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird einen  \\immer h{\"o}her werdender Ton erzeugt, der jedoch \\ wieder abf{\"a}llt im Laufe der Zeit\end{tabular}     \\
+Einfaches Zirpsignal   & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird ein immer\\ h{\"o}her werdender Ton erzeugt, der nach 4 \\Sekunden wieder f{\"a}llt. Dies liegt am Aliasing Effekt,\\ da die Abtastrate zu niedrig ist\\ (Quellen: http://www.asel.udel.edu/speech/tutorials/\\instrument/sam_rat.html, https://de.wikipedia.org/wiki/\\Alias-Effekt). Ab dem Zeitpunkt, in dem die Rate weniger als\\ doppelt so groß ist wie die Frequenz, f{\"a}llt\\ die Tonh{\"o}he. In unserem Fall ist dies ab \\4 Sekunden bei 4kHz, da die Abtastrate bei 8kHz liegt. \end{tabular}     \\
 &\\
-Allgemeines Zirpsignal & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ ein fallender Ton erzeugt, der jedoch wieder ansteigt \\ im Laufe der Zeit\end{tabular}                   \\ \hline
+Allgemeines Zirpsignal & \begin{tabular}[c]{@{}l@{}}In der Wiedergabe des Audiosignals wird \\ ein fallender Ton erzeugt, der jedoch wieder ansteigt.\\ Nach 6 Sekunden ist eine Frequenz von Null erreicht und\\ somit ist ab einer niedrigen Frequenz kein Ton mehr\\ zu h{\"o}ren bevor der Ton wieder h{\"o}her wird, da die\\ Frequenz wieder steigt und nicht\\ negativ werden kann. \end{tabular}                   \\ \hline
 \end{tabular}
 \end{table}
 
