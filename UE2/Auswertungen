@@ -1,0 +1,33 @@
+Aufgabe 2
+a) Im ersten Graphen haben wir mit 1024 Messwerten im zeitlichen Abstand von jeweils 8 Millisekunden ein einfaches Zirpsignal generiert.
+Man kann beaochten, dass das Signal bis 4 Sekunden eine höhere Frequenz hat und diese dann sehr stark sinkt und wieder etwas ansteigt und das Signal mit niedrigerer Frequenz bis kurz nach 8 Sekunden weiterläuft.
+
+*hier den Graphen einfügen
+
+b) Die 5 Kennwerte in Gleichung 2.7 des Arbeitsblattes kann man folgendermaßen bestimmen:
+da es sich um einfaches Zirpsignal handelt, wissen wir, dass f0 gleich Null ist und f1 ungleich Null, d.h. eine Frequenzänderung besitzt.
+Dies konnten schon wir schon in der Aufgabe 2a) gut beaobachten. Die Amplitude A verändert sich während der Zeit ein wenig und ist auch nicht kosntant.
+Sie liegt bis 4 Sekunden approximiert bei 1,75 und ab 4 Sekunden dann fast konstant bei 2.
+Das Zirpsignal hat keinen Gleichanteil s0 und auch keinen Phasenwinkel.
+
+*am besten oben die Formel 2.7 einfügen
+
+c)Für die Prüfung auf schwache Stationarität haben wir den Mittelwert, die Standardabweichung sowie die Varianz von jeweils 64 Messwerten am Signalanfang, in der Signalmitte sowie an dem Signalende berechnet.
+
+*Werte hier einfügen (siehe excel file)
+
+Dabei waren die Werte am Signalanfang sowie am Signalende zum Teil sehr ähnlich, jedoch die Werte in der Signalmitte sehr verschieden.
+Dies kann man auch gut im Graphen aus 2a) beaobachten, da sich in der Signalmitte (bei 4 Sekunden) die Frequenz stark ändert.
+Stationarität im Falle von Signalen bedeutet, dass ihre statistischen EIgenschaften nicht von der Zeit abhängig sind.
+Stark stationäre Signale haben eine zeitunabhängige Verteilungsfunktion, schwach stationäre Signale haben nur einen zeitunabhängigen Erwartungswert und Varianz. (Quelle: Werkzeuge der Signalverarbeitung)
+Da die statistischen Werte unseres Zirpsignals jedoch zeitabhängig sind, ist das Signal instationär, also auch nicht schwach stationär.
+
+d)Im nächsten Schritt betrachten wir das Signal spektral, indem wir für die kurzen Episoden am Signalanfang, in der Signalmitte und am Signalende die DFT-Spektren berechnen und die DFT-Betragsspektren darstellen.
+
+*komplexe Zahlen sind im excel sheet berechnet, weiß nicht ob wir die mit einfügen müssen. hier kannst du auf jeden fall die 3 graphen einfügen aus excel
+
+Alle 3 Betragspektren haben einen ähnlichen Verlauf. Bei niedrigem und hohen k ist das Betragsspektrum hoch, anderfalls konstant niedrig.
+
+
+e) Schlussfolgerung: das Signal ist nicht schwach stationär.
+*kennen wir das Signal?
