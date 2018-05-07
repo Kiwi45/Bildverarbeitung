@@ -31,3 +31,26 @@ Alle 3 Betragspektren haben einen ähnlichen Verlauf. Bei niedrigem und hohen k 
 
 e) Schlussfolgerung: das Signal ist nicht schwach stationär.
 *kennen wir das Signal?
+Wenn man das Signal als Audiosignal betrachtet klingt es mehrfach aneinandergereiht wie ein Alarmsignal.
+
+Aufgabe 3
+Für diese Aufgabe multiplizieren wir zunächst die 3 Faktoren: das allgemeine Zirpsignal aus Aufgabe 1d, die Kosinusglocke als Fensterfunktion und die komplexe Exponentialfunktion.
+Anschließend intergrieren wir von 0 bis 4 Sekunden mit der Trapezregel in Matlab, indem wir den Vektor x mit den Werten von 0 bis 4 Sekunden und die 5 Produkte zu den jeweiligen Zeitpunkten übergeben.
+
+Die Kosinusglocke berechnen wir mit folgender Formel:
+
+g(t) = 1 + cos(pi*alpha*t)
+
+Da die Fensterbreite alpha/2 = 0,4 Sekunden gegeben ist, können wir alpha = 5 Sekunden umstellen und weiter einsetzen.
+
+Die Frequenz f haben wir mit 15625 Hz berechnet, sodass wir ω mit ω = 2*pi*f für die Umstellung der komplexen Exponentialfunktion berechnen können.
+
+*Formel: e^-jωt = ω*cos(t)+(-j)sin(t)
+
+Das Signal berechnet sich wie folgt:
+
+signal = A * sin(pi*f1*t+2*pi*f0*t)
+
+Das Produkt aus den 3 Faktoren lässt sich folgendermaßen darstellen:
+
+product = signal*(1+cos(pi*5*t*(2*pi*15625*cos(t-(sqrt(-1)*sin(t)))
