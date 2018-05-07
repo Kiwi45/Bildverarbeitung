@@ -1,0 +1,103 @@
+% das Papierformat zuerst
+\documentclass[a4paper, 12pt]{article}
+\linespread{1.15}
+\usepackage{verbatim}
+%reduce whitespaces
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx} 
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage[svgnames]{xcolor}
+\usepackage{listings}
+\lstset{breaklines}
+\usepackage{afterpage}
+
+%adjust footer/ header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{Carolin Kunze(552038), Kevin Noessler} 
+
+%add Code
+\usepackage{listings}
+
+\title{SV4}
+
+% hier beginnt das Dokument
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+Nachtrag zu Aufgabe 2\\
+e) Wenn man das Signal als Audiosignal betrachtet klingt es mehrfach aneinandergereiht wie ein Alarmsignal.\\
+
+
+Aufgabe 3\\
+In dieser Aufgabe multiplizieren wir zun{\"a}chst die 3 Faktoren: das allgemeine Zirpsignal aus Aufgabe 1d, die Kosinusglocke als Fensterfunktion und die komplexe Exponentialfunktion.
+Anschließend intergrieren wir von 0 bis 4 Sekunden mit der Trapezregel in Matlab, indem wir den Vektor x mit den Werten von 0 bis 4 Sekunden und die 5 Produkte der 3 genannten Faktoren zu den jeweiligen Zeitpunkten {\"u}bergeben.
+
+Die Kosinusglocke berechnen wir mit folgender Formel:
+
+
+\begin{center}
+	\begin{equation}
+    
+                \begin{array}{ll}
+                 g(t) = 1 + cos(\pi*\alpha*t)
+                \end{array}
+              
+	\end{equation}
+\end{center}
+
+
+Da die Fensterbreite $\alpha/2 = 0,4$ Sekunden gegeben ist, k{\"o}nnen wir $\alpha = 5$ Sekunden umstellen und weiter einsetzen.
+
+Die Frequenz f haben wir mit 15625 Hz berechnet, sodass wir $\omega$ mit $\omega = 2*\pi*f$ f{\"u}r die Umstellung der komplexen Exponentialfunktion berechnen k{\"o}nnen.
+
+
+\begin{center}
+	\begin{equation}
+   
+                \begin{array}{ll}
+                 e^{-j*\omega*t} = \omega*cos(t)+(-j)sin(t)
+                \end{array}
+             
+	\end{equation}
+\end{center}
+
+
+Das Signal berechnet sich wie folgt:
+
+\begin{center}
+	\begin{equation}
+   
+                \begin{array}{ll}
+                 signal = A * sin(\pi*f1*t+2*\pi*f0*t)
+                \end{array}
+             
+	\end{equation}
+\end{center}
+
+
+Das Produkt aus den 3 Faktoren l{\"a}sst sich folgendermaßen darstellen:
+
+\begin{center}
+	\begin{equation}
+   
+                \begin{array}{ll}
+                 product = signal*(1+cos(\pi*5*t*(2*\pi*15625*cos(t-(\sqrt{-1}*sin(t)))
+                \end{array}
+             
+	\end{equation}
+\end{center}
+
+Da wir uns noch unsicher über die Ergebnisdarstellung unserer Berechnung sind, haben wir leider keine Ergebnisdiagramme.
+
+
+
+\end{document}
