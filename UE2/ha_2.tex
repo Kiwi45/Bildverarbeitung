@@ -1,0 +1,141 @@
+% (c) Gerard Baecker
+\documentclass[fleqn,a4paper,12pt]{article}
+\usepackage[german]{babel}
+\usepackage{amsmath}    % Mathematische Symbole
+\usepackage{amssymb}     % Nochmehr mathematische Symbole
+\usepackage{dsfont}      % Schriftsatz fuer Zahlenmengensymbole
+%\usepackage{verbatim}   % erweiterte Verbatim-Umgebung
+\usepackage{alltt}       % Quasi-Verbatim-Umgebung
+\usepackage{fancyhdr}    % Eigene Kopfzeilen
+\usepackage{graphicx}    % Zum Einbinden von Grafiken
+% Einbinden einer eps-Grafik geht so: includegraphics{path}
+
+% Seitenraender
+\addtolength{\voffset}{-2cm}
+\addtolength{\textheight}{0cm}
+\addtolength{\hoffset}{0cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\headheight}{2cm} % fuer jeden Strichkode einen Zentimeter
+
+% Skalierung der Grafiken
+\setlength{\unitlength}{1cm}
+
+\pagestyle{fancy}            % Eigene Kopfzeilen verwenden
+\frenchspacing               % Kein Extrafreiraum nach Satzzeichen
+\setlength{\parindent}{0pt}  % Neue Absaetze nicht einruecken
+%\sloppy                     % Schlampige Absatzformatierung
+\fussy                       % Penible Absatzformatierung
+\linespread{1.5}             % Zeilenabstand
+
+% Font fuer Code 39
+\font\xlix=wlc39 scaled 1200
+\newcommand\barcode[1]{{\xlix@#1@}}
+
+% Name, Matrikelnummer, Barcode
+\newcommand\student[2]{
+  \mbox{\scriptsize
+  \begin{tabular}{@{}l@{}r@{}}
+    \multicolumn{2}{@{}r@{}}{\barcode{#2}}\\
+    #1&#2\\
+  \end{tabular}}}
+
+% Kopfzeile
+\lhead{
+  \small
+  \textsc{Spezialgebiete der Bildverarbeitung \\
+    SS 2018 \\
+    \"Ubung (08.05.2018)}
+  \vfill}
+\rhead{
+  \begin{tabular}[b]{@{}rr@{}}
+    \student{Carolin Kunze}{*552038*} &\\
+     \student{Kevin Noessler}{*569626*}  & \\   
+  \end{tabular}}
+
+\begin{document}
+
+"Ubungsaufgabe 2: \newline
+
+a) Im ersten Graphen haben wir mit 1024 Messwerten im zeitlichen Abstand von jeweils 8 Millisekunden ein einfaches Zirpsignal generiert.
+Man kann beaochten, dass das Signal bis 4 Sekunden eine höhere Frequenz hat und diese dann sehr stark sinkt und wieder etwas ansteigt und das Signal mit niedrigerer Frequenz bis kurz nach 8 Sekunden weiterl{\"a}uft.
+
+\begin{center}
+\begin{figure}[h]
+    \begin{scriptsize}
+  \begin{center}
+      \includegraphics[scale = 0.65]{graph_2a.png}
+      \end{center}
+ 	\end{scriptsize}
+  \end{figure}
+\end{center}
+  
+b) Die 5 Kennwerte in Gleichung 2.7 des Arbeitsblattes kann man folgendermaßen bestimmen:
+da es sich um einfaches Zirpsignal handelt, wissen wir, dass f0 gleich Null ist und f1 ungleich Null, d.h. eine Frequenz{\"a}nderung besitzt.
+Dies konnten schon wir schon in der Aufgabe 2a) gut beaobachten. Die Amplitude A verändert sich während der Zeit ein wenig und ist auch nicht kosntant.
+Sie liegt bis 4 Sekunden approximiert bei 1,75 und ab 4 Sekunden dann fast konstant bei 2.
+Das Zirpsignal hat keinen Gleichanteil s0 und auch keinen Phasenwinkel.\\
+
+
+
+c) F{\"u}r die Pr{\"u}fung auf schwache Stationarit{\"a}t haben wir den Mittelwert, die Standardabweichung sowie die Varianz von jeweils 64 Messwerten am Signalanfang, in der Signalmitte sowie an dem Signalende berechnet.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|l|c|l}
+             & \multicolumn{1}{c|}{Mittelwerte} & Standardabweichung & \multicolumn{1}{c}{Varianz} \\ \hline
+Signalanfang & -0,070523438                     & 1,325318678        & 1,784350067                 \\
+Signalmitte  & 0,121816923                      & 0,840983014        & 0,718303249                 \\
+Signalende   & -0,078418462                     & 1,440280558        & 2,106820713                
+\end{tabular}
+\end{table}
+
+Dabei waren die Werte am Signalanfang sowie am Signalende zum Teil sehr ähnlich, jedoch die Werte in der Signalmitte sehr verschieden.
+Dies kann man auch gut im Graphen aus 2a) beaobachten, da sich in der Signalmitte (bei 4 Sekunden) die Frequenz stark ändert.
+Stationarit{\"a}t im Falle von Signalen bedeutet, dass ihre statistischen EIgenschaften nicht von der Zeit abh{\"a}ngig sind.
+Stark stationäre Signale haben eine zeitunabh{\"a}ngige Verteilungsfunktion, schwach station{\"a}re Signale haben nur einen zeitunabhängigen Erwartungswert und Varianz. (Quelle: Werkzeuge der Signalverarbeitung)
+Da die statistischen Werte unseres Zirpsignals jedoch zeitabh{\"a}ngig sind, ist das Signal instation{\"a}r, also auch nicht schwach station{\"a}r.
+
+\newpage
+d) Im nächsten Schritt betrachten wir das Signal spektral, indem wir für die kurzen Episoden am Signalanfang, in der Signalmitte und am Signalende die DFT-Spektren berechnen und die DFT-Betragsspektren darstellen.
+
+\begin{center}
+\begin{figure}[h]
+    \begin{scriptsize}
+  \begin{center}
+      \includegraphics[scale = 0.65]{gra1.png}
+      \end{center}
+ 	\end{scriptsize}
+  \end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[h]
+    \begin{scriptsize}
+  \begin{center}
+      \includegraphics[scale = 0.5]{gra2.png}
+      \end{center}
+ 	\end{scriptsize}
+  \end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[h]
+    \begin{scriptsize}
+  \begin{center}
+      \includegraphics[scale = 0.65]{gra3.png}
+      \end{center}
+ 	\end{scriptsize}
+  \end{figure}
+\end{center}
+
+\newpage
+Alle 3 Betragspektren haben einen {\"a}hnlichen Verlauf. Bei niedrigem und hohen k ist das Betragsspektrum hoch, anderfalls konstant niedrig. \\
+
+
+e) Schlussfolgerung: das Signal ist nicht schwach station{\"a}r.
+
+
+
+
+
+\end{document}
